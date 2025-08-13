@@ -1,0 +1,59 @@
+import React, { useState } from "react";
+import sampleData from "../data/sampleData.json";
+
+function ReportAccess() {
+  const [selectedUser, setSelectedUser] = useState("");
+  const [selectedReport, setSelectedReport] = useState("");
+
+  return (
+    <div className="report-access">
+      <h3>Report Access</h3>
+
+      <label>Select User</label>
+      <select value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)}>
+        <option value="">Select User</option>
+        {sampleData.users.map((user, index) => (
+          <option key={index} value={user}>{user}</option>
+        ))}
+      </select>
+
+      <label>Select Report</label>
+      <select value={selectedReport} onChange={(e) => setSelectedReport(e.target.value)}>
+        <option value="">Select Report</option>
+        {sampleData.reports.map((report, index) => (
+          <option key={index} value={report}>{report}</option>
+        ))}
+      </select>
+
+      <button className="assign-btn">Assign Access</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Created At</th>
+            <th>Report</th>
+            <th>Access</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sampleData.accessList.map((item, index) => (
+            <tr key={index}>
+              <td>{item.username}</td>
+              <td>{item.createdAt}</td>
+              <td>{item.report}</td>
+              <td>{item.access}</td>
+              <td>
+                <button>Edit</button>
+                <button>Remove</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default ReportAccess;
