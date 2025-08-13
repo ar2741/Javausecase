@@ -1,0 +1,8 @@
+{
+  "users": ["John Doe", "Jane Smith", "David Lee"],
+  "reports": ["Sales Report", "Finance Report", "HR Report"],
+  "accessList": [
+    { "username": "John Doe", "createdAt": "2025-08-01", "report": "Sales Report", "access": "Granted" },
+    { "username": "Jane Smith", "createdAt": "2025-08-05", "report": "Finance Report", "access": "Granted" }
+  ]
+}
