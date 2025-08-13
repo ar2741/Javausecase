@@ -1,0 +1,19 @@
+import React from "react";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import ReportAccess from "./components/ReportAccess";
+import "./App.css";
+
+function App() {
+  return (
+    <div className="dashboard-container">
+      <Sidebar />
+      <div className="main-content">
+        <Header />
+        <ReportAccess />
+      </div>
+    </div>
+  );
+}
+
+export default App;
