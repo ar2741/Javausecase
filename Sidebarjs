@@ -1,0 +1,23 @@
+import React from "react";
+import { FaTachometerAlt, FaUsers, FaLock, FaFileAlt, FaCog, FaUserCircle, FaQuestionCircle } from "react-icons/fa";
+
+function Sidebar() {
+  return (
+    <div className="sidebar">
+      <img src="/logo.png" alt="Standard Chartered" className="logo" />
+      <ul>
+        <li><FaTachometerAlt /> Dashboard</li>
+        <li><FaUsers /> User Management</li>
+        <li><FaLock /> AD Group Access</li>
+        <li><FaFileAlt /> Report Access</li>
+        <li><FaCog /> Settings</li>
+      </ul>
+      <div className="sidebar-bottom">
+        <li><FaUserCircle /> Account</li>
+        <li><FaQuestionCircle /> Help</li>
+      </div>
+    </div>
+  );
+}
+
+export default Sidebar;
