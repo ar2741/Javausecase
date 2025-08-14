@@ -8,15 +8,13 @@ import {
   FaUserCircle, 
   FaQuestionCircle 
 } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // If using React Router
 
 function Sidebar() {
-  const navigate = useNavigate(); // Initialize navigation hook
-
-  // Handle menu item clicks
-  const handleMenuItemClick = (path) => {
-    navigate(path); // Navigate to the specified path
-    // You could also add other logic here like tracking analytics
+  // Simple click handler for menu items
+  const handleClick = (menuItem) => {
+    console.log(`${menuItem} clicked`);
+    // Add your button functionality here
+    // You can replace this with state management or other logic
   };
 
   return (
@@ -24,28 +22,28 @@ function Sidebar() {
       <img src="/logo.png" alt="Standard Chartered" className="logo" />
       
       <ul>
-        <li onClick={() => handleMenuItemClick('/dashboard')}>
+        <li onClick={() => handleClick('Dashboard')}>
           <FaTachometerAlt /> Dashboard
         </li>
-        <li onClick={() => handleMenuItemClick('/user-management')}>
+        <li onClick={() => handleClick('User Management')}>
           <FaUsers /> User Management
         </li>
-        <li onClick={() => handleMenuItemClick('/ad-group-access')}>
+        <li onClick={() => handleClick('AD Group Access')}>
           <FaLock /> AD Group Access
         </li>
-        <li onClick={() => handleMenuItemClick('/report-access')}>
+        <li onClick={() => handleClick('Report Access')}>
           <FaFileAlt /> Report Access
         </li>
-        <li onClick={() => handleMenuItemClick('/settings')}>
+        <li onClick={() => handleClick('Settings')}>
           <FaCog /> Settings
         </li>
       </ul>
       
       <div className="sidebar-bottom">
-        <li onClick={() => handleMenuItemClick('/account')}>
+        <li onClick={() => handleClick('Account')}>
           <FaUserCircle /> Account
         </li>
-        <li onClick={() => handleMenuItemClick('/help')}>
+        <li onClick={() => handleClick('Help')}>
           <FaQuestionCircle /> Help
         </li>
       </div>
