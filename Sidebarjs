@@ -8,12 +8,15 @@ import {
   FaUserCircle, 
   FaQuestionCircle 
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // If using React Router
 
 function Sidebar() {
-  // Click handler for menu items
-  const handleButtonClick = (buttonName) => {
-    console.log(`${buttonName} clicked`); // Replace with your desired action
-    // You can add your specific logic for each button here
+  const navigate = useNavigate(); // Initialize navigation hook
+
+  // Handle menu item clicks
+  const handleMenuItemClick = (path) => {
+    navigate(path); // Navigate to the specified path
+    // You could also add other logic here like tracking analytics
   };
 
   return (
@@ -21,28 +24,28 @@ function Sidebar() {
       <img src="/logo.png" alt="Standard Chartered" className="logo" />
       
       <ul>
-        <li onClick={() => handleButtonClick('Dashboard')}>
+        <li onClick={() => handleMenuItemClick('/dashboard')}>
           <FaTachometerAlt /> Dashboard
         </li>
-        <li onClick={() => handleButtonClick('User Management')}>
+        <li onClick={() => handleMenuItemClick('/user-management')}>
           <FaUsers /> User Management
         </li>
-        <li onClick={() => handleButtonClick('AD Group Access')}>
+        <li onClick={() => handleMenuItemClick('/ad-group-access')}>
           <FaLock /> AD Group Access
         </li>
-        <li onClick={() => handleButtonClick('Report Access')}>
+        <li onClick={() => handleMenuItemClick('/report-access')}>
           <FaFileAlt /> Report Access
         </li>
-        <li onClick={() => handleButtonClick('Settings')}>
+        <li onClick={() => handleMenuItemClick('/settings')}>
           <FaCog /> Settings
         </li>
       </ul>
       
       <div className="sidebar-bottom">
-        <li onClick={() => handleButtonClick('Account')}>
+        <li onClick={() => handleMenuItemClick('/account')}>
           <FaUserCircle /> Account
         </li>
-        <li onClick={() => handleButtonClick('Help')}>
+        <li onClick={() => handleMenuItemClick('/help')}>
           <FaQuestionCircle /> Help
         </li>
       </div>
