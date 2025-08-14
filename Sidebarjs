@@ -1,55 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/logo.png"; // Change path if needed
+import { FaTachometerAlt, FaUsers, FaLock, FaFileAlt, FaCog, FaUserCircle, FaQuestionCircle } from "react-icons/fa";
 
-export default function Sidebar() {
+function Sidebar() {
   return (
-    <div
-      style={{
-        width: "250px",
-        backgroundColor: "#006f61", // Standard Chartered green
-        color: "#fff",
-        padding: "20px",
-        minHeight: "100vh"
-      }}
-    >
-      {/* Logo */}
-      <img
-        src={logo}
-        alt="Standard Chartered Bank logo"
-        style={{ height: "40px", marginBottom: "20px" }}
-      />
-
-      {/* Sidebar Buttons */}
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        <li>
-          <Link
-            to="/"
-            className="btn btn-light w-100 mb-2"
-            style={{ textAlign: "left" }}
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/reports"
-            className="btn btn-light w-100 mb-2"
-            style={{ textAlign: "left" }}
-          >
-            Reports
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/settings"
-            className="btn btn-light w-100 mb-2"
-            style={{ textAlign: "left" }}
-          >
-            Settings
-          </Link>
-        </li>
+    <div className="sidebar">
+      <img src="/logo.png" alt="Standard Chartered" className="logo" />
+      <ul>
+        <li><FaTachometerAlt /> Dashboard</li>
+        <li><FaUsers /> User Management</li>
+        <li><FaLock /> AD Group Access</li>
+        <li><FaFileAlt /> Report Access</li>
+        <li><FaCog /> Settings</li>
       </ul>
+      <div className="sidebar-bottom">
+        <li><FaUserCircle /> Account</li>
+        <li><FaQuestionCircle /> Help</li>
+      </div>
     </div>
   );
 }
+
+export default Sidebar;
+
