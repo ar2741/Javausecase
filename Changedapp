@@ -1,0 +1,14 @@
+import { Routes, Route } from "react-router-dom";
+import AdminLayout from "./layouts/AdminLayout";
+import ReportAccess from "./pages/ReportAccess";
+
+export default function App() {
+  return (
+    <Routes>
+      <Route element={<AdminLayout />}>
+        {/* You can add more admin pages here  */}
+        <Route path="/admin/report-access" element={<ReportAccess />} />
+      </Route>
+    </Routes>
+  );
+}
